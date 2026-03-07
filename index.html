@@ -36,13 +36,13 @@
                 <div class="card-body">
                     <fieldset class="fieldset">
                         <label class="label">Username</label>
-                        <input type="email" class="input" placeholder="Enter Username" />
+                        <input id="user-name" type="email" class="input" placeholder="Enter Username" />
                         <p class="text-blue-700">Default: admin</p>
                         <label class="label">Password</label>
-                        <input type="password" class="input" placeholder="Enter Password" />
+                        <input id="password" type="password" class="input" placeholder="Enter Password" />
                         <p class="text-blue-700">Default: admin123</p>
 
-                        <button class="btn btn-primary mt-4">Sign In</button>
+                        <button onclick="btnSignIn()" id="btn-signin" class="btn btn-primary mt-4">Sign In</button>
                     </fieldset>
                 </div>
             </div>
