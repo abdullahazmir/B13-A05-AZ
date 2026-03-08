@@ -84,7 +84,8 @@
                         <input id="input-search" type="search" required placeholder="Search Issues" />
                     </label>
 
-                    <button id="search" onclick="displaySearch()"  class="btn btn-active btn-primary"><i class="fa-solid fa-plus"></i> New Issues</button>
+                    <button id="search" onclick="displaySearch()" class="btn btn-active btn-primary"><i
+                            class="fa-solid fa-plus"></i> New Issues</button>
 
                 </div>
             </nav>
@@ -92,9 +93,9 @@
             <!-- all, open , closed -->
 
             <div class="w-10/12 mx-auto py-5 space-x-3 bg-gray-200 mt-5 rounded-md pl-4">
-                <button class="btn btn-neutral btn-outline">All</button>
-                <button class="btn btn-neutral btn-outline">Open</button>
-                <button class="btn btn-neutral btn-outline">Closed</button>
+                <button onclick="filterIssues('all')" class="filter-btn btn">All</button>
+                <button onclick="filterIssues('open')" class="filter-btn btn">Open</button>
+                <button onclick="filterIssues('closed')" class="filter-btn btn">Closed</button>
             </div>
 
             <div class="w-10/12 mx-auto py-5 space-x-3 bg-gray-200 mt-5 rounded-md pl-4 flex justify-between">
@@ -135,10 +136,10 @@
                         <div class="space-y-4">
                             <div class="flex gap-4">
                                 <div class="badge badge-warning">MEDIUM</div>
-                            <ul class="flex gap-5">
-                                <li>Opened by Fahim Ahmed</li>
-                                <li>Date</li>
-                            </ul>
+                                <ul class="flex gap-5">
+                                    <li>Opened by Fahim Ahmed</li>
+                                    <li>Date</li>
+                                </ul>
                             </div>
 
                             <div class="flex gap-5">

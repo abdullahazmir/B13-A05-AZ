@@ -43,22 +43,46 @@ const btnSignIn =()=>{
 
 
 
-// fetching all issues
-// {
-//     "id": 1,
-//     "title": "Fix navigation menu on mobile devices",
-//     "description": "The navigation menu doesn't collapse properly on mobile devices. Need to fix the responsive behavior.",
-//     "status": "open",
-//     "labels": [
-//         "bug",
-//         "help wanted"
-//     ],
-//     "priority": "high",
-//     "author": "john_doe",
-//     "assignee": "jane_smith",
-//     "createdAt": "2024-01-15T10:30:00Z",
-//     "updatedAt": "2024-01-15T10:30:00Z"
-// }
+function setActiveButton(clickedBtn){
+
+    const buttons = document.querySelectorAll('.filter-btn');
+    // console.log(buttons)
+
+    buttons.forEach(btn=>{
+        btn.classList.remove('btn-primary'); // active color remove
+    });
+
+    clickedBtn.classList.add('btn-primary'); // active color add
+}
+
+function filterIssues(status){
+     const url = 'https://phi-lab-server.vercel.app/api/v1/lab/issues'
+     const clickedBtn = event.target;
+    setActiveButton(clickedBtn);
+
+    fetch(url)
+    .then(res => res.json())
+    .then(data=> {
+        // console.log(data)
+        const allIssues =data.data
+        
+    let filteredIssues;
+
+    if(status === 'all'){
+        filteredIssues = allIssues;
+    } else{
+        filteredIssues = allIssues.filter(issue => issue.status === status);
+    }
+
+    issueContainer.innerHTML = '';
+    displayAllIssues(filteredIssues);
+    })
+
+    
+
+}
+
+
 
 const loadAllIssues = ()=>{
     const url = 'https://phi-lab-server.vercel.app/api/v1/lab/issues'
