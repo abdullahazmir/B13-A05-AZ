@@ -6,15 +6,6 @@ const createElements = (arr) => {
 
 
 
-
-
-
-// const createElements = (arr) => {
-//   const htmlElements = arr.map((el) => `<badge class="btn bg-orange-300 rounded-full badge-info">${el}</badge>`);
-//   return htmlElements.join(" ");
-// };
-
-
 const userName = document.getElementById('user-name')
 const password = document.getElementById('password')
 const loginSection = document.getElementById('login-section')
@@ -112,10 +103,11 @@ const loadAllIssues = () => {
 }
 
 const displayAllIssues = (array) => {
-    issueNumber=  issueContainer.length
 
     issueContainer.innerHTML = '';
-    console.log(array)
+
+    issueNumber.innerText= array.length
+    // console.log(array)
     array.forEach((issue) => {
         const bdDate = new Date(issue.createdAt).toLocaleString("en-BD", {
             timeZone: "Asia/Dhaka"
@@ -209,23 +201,6 @@ const displaySingleIssue = (issue) => {
     document.getElementById('my_modal').showModal();
 
 }
-
-// search issue
-
-// const loadSearch = async()=>{
-//     const url = `https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q={searchText}`
-//     const res = await fetch(url);
-//     const search = await res.json();
-//     displaySearch(search.data)
-// }
-//     const displaySearch= (data)=>{
-//     const searchInput = document.getElementById('input');
-//     const searchBtn = document.getElementById('search')
-
-//     }
-
-// loadSearch()
-
 
 const displaySearch = async () => {
 
